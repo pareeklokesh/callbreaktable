@@ -23,7 +23,7 @@
   </div>
     <div class="w-auto">
       <button class="round-btn me-4" data-bs-toggle="modal" data-bs-target="#exampleModal">Round: <span>1/5</span></button>
-      <button class="back-btn" data-bs-toggle="modal" data-bs-target="#resultModal"><i class="fa-solid fa-arrow-left"></i></button>
+      <button class="border-0 bg-transparent" data-bs-toggle="modal" data-bs-target="#resultModal"><img src="assets/img/righthhb.png" width="50" /></button>
     </div>
 </div>
 </div>
@@ -31,7 +31,7 @@
 <div class="container callbreaktable-container">
   <div class="callbreaktablegame w-100 position-relative d-flex align-items-center justify-content-center position-relative">
 
-    <div class="callbrak-usertb position-absolute">
+    <div class="callbrak-usertb position-absolute bidClick">
     <div class="callbrak-user gradient-border overflow-hidden">
       <div class="w-100 position-relative h-100 overflow-hidden" style="z-index: 2;">
       <img src="assets/img/profile.jpg" class="w-100 h-100 rounded-pill user-profile"  />
@@ -130,7 +130,7 @@
   </div>
 </div>
 
-<div class="d-flex allcards" style="display: none !important;">
+<div class="d-flex allcards">
   <img class="m-0" src="assets/img/blackheart1.png">
   <img src="assets/img/blackheart2.png">
   <img src="assets/img/blackheart3.png">
@@ -153,7 +153,7 @@
   <img class="position-absolute" src="assets/img/blackheart9.png" style="bottom: -125px;z-index: 2">
 </div>
 
-<div class="yourbid w-100 position-absolute d-flex flex-wrap justify-content-center" style="display: none !important;">
+<div class="yourbid w-100 position-absolute d-flex flex-wrap justify-content-center" >
   <div class="w-100 d-flex justify-content-center">
     <h2>Select Your Bid</h2>
   </div>
@@ -305,7 +305,7 @@
       <div class="modal-body pb-4">
         <h6 class="text-center">Are you sure want to exit</h6>
         <div class="d-flex justify-content-center align-items-center pb-2">
-          <button class="noyes-btn me-3">No</button>
+          <button class="noyes-btn me-3" data-bs-dismiss="modal">No</button>
           <button class="noyes-btn" style="background: #7dff00;">Yes</button>
         </div>
       </div>
@@ -315,6 +315,12 @@
 
 <script src="assets/js/bootstrap.min.js"></script>
 <script src="assets/js/jquery.min.js"></script>
+
+<script>
+  $(".bidClick").click(function(){
+    $(".yourbid").toggleClass("yourbid-open");
+  });
+</script>
 
 </body>
 </html>
