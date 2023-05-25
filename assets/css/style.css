@@ -845,6 +845,86 @@ margin-top: 2px;
   border-radius: 25px;
   padding: 3px 15px;
 }
+.yourbid {
+  transition: all .4s linear;
+  transform: scale(0);
+  visibility: hidden;
+}
+.yourbid-open {
+  transform: scale(1);
+  visibility: visible;
+}
+
+.circle {
+  --r: 20vmin;
+  /* radius of the circle */
+  --t: 8;
+  /* total number of books */
+  position: relative;
+  --w: calc(var(--r) * 1.2);
+  /* the top of the book is 20% out further than the edge of the circle */
+  width: calc(2 * var(--w));
+  height: calc(2 * var(--w));
+  margin: 0;
+  padding: 0;
+  animation: rotate 10s linear infinite;
+  animation-fill-mode: forwards;
+}
+/*@keyframes rotate {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}*/
+.book {
+  height: calc(var(--r) * 1.2);
+  width: calc(var(--r) / 5);
+  position: absolute;
+  bottom: var(--w);
+  left: calc(var(--w) - (0.5 * var(--r) / 5));
+  transform-origin: center bottom;
+  transform: rotate(calc(var(--n) * 22.5deg));
+  position: absolute;
+  background-image: url(https://i.stack.imgur.com/9XtVu.png);
+  background-size: contain;
+  background-position: 0 0;
+  background-repeat: no-repeat;
+  margin: 0;
+  padding: 0;
+}
+.book:nth-child(1) {
+  --n: 1;
+}
+
+.book:nth-child(2) {
+  --n: 2;
+}
+
+.book:nth-child(3) {
+  --n: 3;
+}
+
+.book:nth-child(4) {
+  --n: 4;
+}
+
+.book:nth-child(5) {
+  --n: 5;
+}
+
+.book:nth-child(6) {
+  --n: 6;
+}
+
+.book:nth-child(7) {
+  --n: 7;
+}
+
+.book:nth-child(8) {
+  --n: 8;
+}
 
 
 
