@@ -15,7 +15,8 @@
   <div class="callbreak-header container-fluid py-3">
   <div class="row justify-content-between">
     <div class="w-auto d-flex align-items-center">
-      <button class="back-btn me-4" data-bs-toggle="modal" data-bs-target="#exitModal"><i class="fa-solid fa-arrow-left"></i></button>
+      <button class="back-btn me-4 lobbymenuBtn"><i class="fa-solid fa-bars"></i></button>
+      <button class="back-btn me-4" data-bs-toggle="modal" data-bs-target="#exitModal"><i class="fa-solid fa-arrow-left"></i></button>  
       <div class="moneytrophy">
         <button class="btn"><img src="assets/img/cashback.png" class="me-3" /> 100</button>
         <button class="btn">100 <img src="assets/img/trophy.png" class="ms-3" /></button>
@@ -313,6 +314,42 @@
   </div>
 </div>
 
+<!-- -----------------Menu------------------------- -->
+
+      <div class="lobbyMenu position-fixed top-0">
+        <button class="btn text-uppercase menumodaltext landscape-block">
+          <img src="assets/img/list.png">Menu
+        </button>
+        <button class="lobbyclose-btn" data-bs-dismiss="modal"><i class="fa-solid fa-xmark"></i></button>
+
+        <ul class="pokerMenu-list landscape-block mb-0">
+          <li class="d-block">
+            <a href="#" class="text-uppercase pokernav-item"><i class="fa-solid fa-forward-step"></i> Resume</a>
+          </li>
+          <li class="d-block">
+            <a href="#" class="text-uppercase pokernav-item"><img src="assets/img/cash.png" width="24">Top up</a>
+          </li>
+          <li class="d-block">
+            <a href="#" class="text-uppercase pokernav-item"><img src="assets/img/switch.png"> Switch Table <span class="upcoming-text">Upcoming</span></a>
+          </li>
+          <li class="d-block">
+            <a href="#" class="text-uppercase pokernav-item"><i class="fa-solid fa-person-arrow-up-from-line"></i> Stand up <span class="upcoming-text">Upcoming</span></a>
+          </li>
+          <li class="d-block">
+            <a href="#" class="text-uppercase pokernav-item"><i class="fa-solid fa-person-arrow-up-from-line"></i> Sit out <span class="upcoming-text">Upcoming</span></a>
+          </li>
+          <li class="d-block">
+            <a href="#" class="text-uppercase pokernav-item"><i class="fa-solid fa-question"></i> How to play <span class="upcoming-text">Upcoming</span></a>
+          </li>
+          <li class="d-block">
+            <a href="#" class="text-uppercase pokernav-item"><i class="fa-solid fa-right-from-bracket"></i> Exit</a>
+          </li>
+        </ul>
+
+      </div>
+
+<!-- -----------------Menu------------------------- -->
+
 <script src="assets/js/bootstrap.min.js"></script>
 <script src="assets/js/jquery.min.js"></script>
 
@@ -320,6 +357,21 @@
   $(".bidClick").click(function(){
     $(".yourbid").toggleClass("yourbid-open");
   });
+</script>
+
+<script>
+  $(".lobbymenuBtn").click(function(){
+  $(".lobbyMenu").toggleClass("lobbyMenu-open");
+  });
+  $(".lobbyclose-btn").click(function(){
+    $(".lobbyMenu").removeClass("lobbyMenu-open");
+  });
+  $(".settingsBtn").click(function(){
+  $(".settingpopup").toggleClass("settingpopup-open");
+  });
+  $(".settingpopup button i").click(function(){
+  $(".settingpopup").removeClass("settingpopup-open");
+});
 </script>
 
 </body>
