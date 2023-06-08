@@ -11,11 +11,49 @@
 </head>
 <body class="lobby-body">
 
-<div class="lobby-fullpage">
-  <div class="lobby-header container-fluid py-3">
+<div class="lobby-fullpage overflow-hidden">
+  <div class="lobby-header container-fluid py-3 position-relative">
   <div class="row justify-content-between align-items-center">
     <div class="w-auto d-flex align-items-center">
-      <button class="btn p-0 me-3"><img src="assets/img/backlobby.png" /></button>
+      <button class="back-btn me-3 lobbymenuBtn"><i class="fa-solid fa-bars" style="color: #261012;"></i></button>
+      <!-- -----------------Menu------------------------- -->
+
+      <div class="lobbyMenu position-absolute top-0">
+        <button class="btn text-uppercase menumodaltext landscape-block">
+          <img src="assets/img/list.png">Menu
+        </button>
+        <button class="lobbyclose-btn" data-bs-dismiss="modal"><i class="fa-solid fa-xmark"></i></button>
+
+        <ul class="pokerMenu-list">
+          <li class="d-block">
+            <a href="#" class="text-capitalize pokernav-item"><i class="fa-solid fa-forward-step"></i> transaction</a>
+          </li>
+          <li class="d-block">
+            <a href="#" class="text-capitalize pokernav-item"><img src="assets/img/cash.png" width="24">KYC</a>
+          </li>
+          <li class="d-block">
+            <a href="#" class="text-capitalize pokernav-item"><i class="fa-solid fa-person-arrow-up-from-line"></i> Bank Details</a>
+          </li>
+          <li class="d-block">
+            <a href="#" class="text-capitalize pokernav-item"><i class="fa-solid fa-person-arrow-up-from-line"></i> Deposit History </a>
+          </li>
+          <li class="d-block">
+            <a href="#" class="text-capitalize pokernav-item"><i class="fa-solid fa-question"></i> My Transactions</a>
+          </li>
+          <li class="d-block">
+            <a href="#" class="text-capitalize pokernav-item"><i class="fa-solid fa-right-from-bracket"></i> My Invitations</a>
+          </li>
+          <li class="d-block">
+            <a href="#" class="text-capitalize pokernav-item"><i class="fa-solid fa-right-from-bracket"></i> Player Invitations</a>
+          </li>
+          <li class="d-block">
+            <button class="text-uppercase logout-lobbybtn">LOgout</button>
+          </li>
+        </ul>
+
+      </div>
+
+<!-- -----------------Menu------------------------- -->
       <div class="d-flex align-items-center lobby-profile">
         <img src="assets/img/profile.jpg" class="position-relative" style="z-index: 1;" />
         <p class="text-uppercase mb-0">
@@ -170,8 +208,25 @@
 </div>
 
 
+
+
 <script src="assets/js/bootstrap.min.js"></script>
 <script src="assets/js/jquery.min.js"></script>
+
+<script>
+  $(".lobbymenuBtn").click(function(){
+  $(".lobbyMenu").toggleClass("lobbyMenu-open");
+  });
+  $(".lobbyclose-btn").click(function(){
+    $(".lobbyMenu").removeClass("lobbyMenu-open");
+  });
+  $(".settingsBtn").click(function(){
+  $(".settingpopup").toggleClass("settingpopup-open");
+  });
+  $(".settingpopup button i").click(function(){
+  $(".settingpopup").removeClass("settingpopup-open");
+});
+</script>
 
 </body>
 </html>
